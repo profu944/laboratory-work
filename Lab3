@@ -1,0 +1,16 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#include <stdio.h>
+#include <limits.h>
+#include <locale.h>
+
+int main(void)
+{
+setlocale(LC_ALL,"Ru");
+	
+  unsigned long n,i, s=0;
+    printf("Введите число: ");
+     scanf("%ld",&n);
+      for(i=1;i<=n;i++) s=s+i;
+    printf("Сумма чисел равна: %lu\n", s);
+return( 0);
+}
