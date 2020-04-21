@@ -1,0 +1,46 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <math.h>
+#include <stdio.h>
+#include <locale.h>
+
+main()
+
+{
+	setlocale(LC_ALL, "RUS");
+	float x, y, z, a, b;
+	float n = 4;
+	float n1 = 6;
+	float r = 1;
+	float r1 = 1;
+
+	for (int i = 2; i <= n; ++i)
+		r *= i;
+
+	for (int i = 2; i <= n1; ++i)
+		r1 *= i;
+
+	printf("Введите x,y,z = \n"); scanf("%f%f%f", &x, &y, &z);
+
+	if (log((fabs((x - sqrt((fabs(y)))))) * (x + y / z + x * x * x * x * x * x / 4)) || (z + x * x * x * x * x * x / 4) <= 0)
+		printf("Решение невозможно.");
+	else
+	{
+		a = pow(log((fabs((x - sqrt((fabs(y)))))) * (x + y / z + x * x * x * x * x * x / 4)), 1 / 5);
+
+		printf("a = %f", a);
+	}
+
+	if (x == 0)
+
+	printf("\nРешение невозможно.");
+
+	else
+
+	{
+			
+	b = -x + x * x / r - x * x * x * x * x / r1;
+			
+	printf("\nb = %f", b);
+			
+	}
+}
