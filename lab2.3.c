@@ -21,24 +21,24 @@ int main(){
 	}	
 	
 	
-	if (minIndex > maxIndex) {				
-		int tmp = minIndex;
-		minIndex = maxIndex;
-		maxIndex = minIndex; 
+	if (minIndex > maxIndex) {
+			int tmp = minIndex;
+			minIndex = maxIndex;
+			maxIndex = tmp;
 	}
-	
-	for(int i = minIndex; i < maxIndex - 1; i++) { 
-       
-	    for(int j = minIndex ; j < maxIndex - i - 1 ; j++) {  
-           
-		    if(a[j] > a[j+1]) {           
+
+	for(int i = 0; i < size; i++) {
+
+	for(int j = minIndex + 1; j < maxIndex - i - 1; j++) {
+
+			if(a[j] < a[j+1]) {
 
 				int tmp = a[j];
 				a[j] = a[j+1] ;
-				a[j+1] = tmp; 
-           }
+				a[j+1] = tmp;
+			}
 		}
-    }
+	}
 	
 	for (int i = 0; i < size; i++) 	printf("%d ", a[i]);
 	
